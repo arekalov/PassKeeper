@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:fontFamily="@font/arkship_font"
         android:textStyle="bold"
-        android:textColor="@color/accent"
+        android:textColor="@color/primary"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:textSize="@dimen/_35ssp"
@@ -28,13 +28,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/_120sdp"
-        app:hintTextColor="@color/accent">
+        app:hintTextColor="@color/primary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Пароль"
+            android:hint="@string/pass"
             android:inputType="textPassword"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -43,11 +43,11 @@
         android:id="@+id/buttonLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Войти"
+        android:text="@string/LogIn"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        android:backgroundTint="@color/accent"
-        android:layout_marginTop="32dp"
+        android:textSize="@dimen/_15ssp"
+        android:backgroundTint="@color/primary"
+        android:layout_marginTop="@dimen/_32sdp"
         app:layout_constraintTop_toBottomOf="@id/et_input"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
