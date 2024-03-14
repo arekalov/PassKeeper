@@ -25,9 +25,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/primary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/_120sdp"
+        android:layout_marginTop="@dimen/_160sdp"
         app:hintTextColor="@color/primary">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -46,10 +48,21 @@
         android:text="@string/LogIn"
         android:textColor="@color/white"
         android:textSize="@dimen/_15ssp"
-        android:backgroundTint="@color/primary"
-        android:layout_marginTop="@dimen/_32sdp"
-        app:layout_constraintTop_toBottomOf="@id/et_input"
+        android:backgroundTint="@color/secondary"
+        android:layout_marginTop="@dimen/_7sdp"
+        app:layout_constraintTop_toBottomOf="@id/btn_fingerprint"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_fingerprint"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:textStyle="bold"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:text="@string/fingerprint"
+        android:textColor="@color/secondaryText"
+        app:layout_constraintTop_toBottomOf="@id/et_input"
         app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
