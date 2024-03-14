@@ -14,9 +14,6 @@ import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
 class MainActivity : AppCompatActivity() {
-    private val prefNaME = "MyPref"
-    private var isHaveBiometric: Boolean = true
-    private lateinit var biometricPrompt: BiometricPrompt
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
