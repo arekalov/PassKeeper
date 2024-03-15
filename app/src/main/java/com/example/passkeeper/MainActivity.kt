@@ -4,6 +4,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
 import com.example.data.security.RepositorySecurity
@@ -24,8 +25,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initComponents()
+    }
 
+    private fun initComponents() {
         initEncryptedSharePreferences()
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
+        val navController = navHostFragment.navController
     }
 
     private fun initEncryptedSharePreferences() {
@@ -44,15 +51,6 @@ class MainActivity : AppCompatActivity() {
         )
         val aead = AeadFactory.getPrimitive(keysetHandle)
         val viewModelFactory = LoginViewModelFactory(encryptedSharedPreferences, aead)
-
         loginViewModel = ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
-
-        checkHaveAccount(encryptedSharedPreferences)
-    }
-
-    private fun checkHaveAccount(encryptedSharedPreferences: SharedPreferences) {
-        if (!encryptedSharedPreferences.contains(this.PASS_NAME) || !encryptedSharedPreferences.contains(this.SALT_NAME)) {
-
-        }
     }
 }
