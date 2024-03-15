@@ -5,7 +5,7 @@ import androidx.security.crypto.EncryptedSharedPreferences
 import com.example.data.security.RepositorySecurity
 import com.google.crypto.tink.Aead
 
-class LoginViewModel(val encryptedSharedPreferences: EncryptedSharedPreferences, val aead: Aead) :
+class LoginViewModel(private val encryptedSharedPreferences: EncryptedSharedPreferences, private val aead: Aead) :
     ViewModel() {
     val securityRepo = RepositorySecurity(aead)
     fun checkPin(pin: String): Boolean {
