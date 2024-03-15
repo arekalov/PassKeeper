@@ -14,4 +14,8 @@ class LoginViewModel(private val encryptedSharedPreferences: SharedPreferences, 
         val salt = encryptedSharedPreferences.getString("salt", "salt") ?: "errorsalt"
         return securityRepo.pinIsValid(pin, salt, hash)
     }
+
+    fun checkHaveAccount(): Boolean {
+        return encryptedSharedPreferences.contains("pass") && encryptedSharedPreferences.contains("salt")
+    }
 }

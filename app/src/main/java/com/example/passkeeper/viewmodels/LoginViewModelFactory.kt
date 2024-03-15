@@ -13,4 +13,5 @@ class LoginViewModelFactory(private val encryptedSharedPreferences: SharedPrefer
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
+
 }
