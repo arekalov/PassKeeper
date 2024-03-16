@@ -88,7 +88,7 @@ class LoginFragment : Fragment(), BiometricAuthListener {
           }
           else {
               val enterEdPin = binding.editTextPassword.text.toString()
-              if (logInViewModel.checkPin(enterEdPin)) {
+              if (!enterEdPin.isEmpty() && logInViewModel.checkPin(enterEdPin)) {
                     accessIsAllowed()
               }
               else {
