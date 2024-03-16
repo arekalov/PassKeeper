@@ -85,8 +85,7 @@ class SignUpFragment : Fragment() {
     private fun signUp(password: String) {
         loginViewModel.signUp(password)
         Toast.makeText(activity, resources.getString(R.string.success_signUp), Toast.LENGTH_SHORT).show()
-        val action = SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2()
-        findNavController().navigate(action)
+        findNavController().popBackStack()
     }
 
     private fun differentPasswords() {
