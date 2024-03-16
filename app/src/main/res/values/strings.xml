@@ -1,14 +1,20 @@
 <resources>
     <string name="app_name">PassKeeper</string>
-    <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome!"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pass">Пароль</string>
+    <string name="LogIn">Войти</string>
+    <string name="fingerprint">Вход по отпечатку</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="have_account">У вас уже есть аккаунт!</string>
+    <string name="dont_have_account">Сначала зарегистрируйтесь!</string>
+    <string name="incorrect_password">Неправильный пароль, попробуйте снова!</string>
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="registration">Регистрация</string>
+    <string name="type_pass">Задайте пароль</string>
+    <string name="retype_pass">Повторите пароль</string>
+    <string name="incorrect_pass_message">Пароль должен содержать от 8 до 30 символов, хотя бы один символ в другом регистре и хотя бы одну цифру</string>
+    <string name="different_pass_message">Пароли должны совпадать</string>
+    <string name="try_again">Попробуйте еще раз!</string>
+    <string name="success_signUp">Вы успешно зарегистрированы!</string>
+    <string name="fingerprint_title">Войти по отпечатку</string>
 </resources>
