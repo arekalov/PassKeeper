@@ -51,7 +51,7 @@ dependencies {
 
     implementation("androidx.security:security-crypto:1.0.0-alpha02")
 
-
+    implementation("androidx.biometric:biometric:1.1.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

@@ -34,6 +34,7 @@
         android:id="@+id/signUpFragment"
         android:name="com.example.passkeeper.SignUpFragment"
         android:label="fragment_sign_up"
+        app:popUpToInclusive="true"
         tools:layout="@layout/fragment_sign_up" >
         <action
             android:id="@+id/action_signUpFragment_to_loginFragment2"

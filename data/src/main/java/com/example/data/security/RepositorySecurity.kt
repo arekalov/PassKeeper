@@ -36,12 +36,10 @@ class RepositorySecurity(val aead: Aead) {
             hashedSalt
         )
         val secretKey = Pbkdf2Factory.createKey(pin.toCharArray(), salt)
-
         val token = try {
             val encryptedToken = Base64.decode(
                 hashedEncryptedPin
             )
-
             aead.decrypt(encryptedToken, secretKey.encoded)
         } catch (e: GeneralSecurityException) {
             null
