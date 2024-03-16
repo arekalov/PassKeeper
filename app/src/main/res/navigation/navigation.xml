@@ -32,7 +32,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.passkeeper.SignUpFragment"
+        android:name="com.example.passkeeper.fragments.SignUpFragment"
         android:label="fragment_sign_up"
         app:popUpToInclusive="true"
         tools:layout="@layout/fragment_sign_up" >

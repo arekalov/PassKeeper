@@ -8,8 +8,8 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import com.example.data.security.RepositorySecurity
-import com.example.passkeeper.BiometricAuthListener
-import com.example.passkeeper.PasswordsValidationState
+import com.example.passkeeper.utils.BiometricAuthListener
+import com.example.passkeeper.utils.PasswordsValidationState
 import com.google.crypto.tink.Aead
 import kotlin.io.encoding.ExperimentalEncodingApi
 
