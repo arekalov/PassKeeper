@@ -17,4 +17,6 @@
     <string name="try_again">Попробуйте еще раз!</string>
     <string name="success_signUp">Вы успешно зарегистрированы!</string>
     <string name="fingerprint_title">Войти по отпечатку</string>
+    <string name="description">description</string>
+    <string name="example_name">Example name</string>
 </resources>
