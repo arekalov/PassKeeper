@@ -27,4 +27,8 @@
     <string name="save">Сохранить</string>
     <string name="success">Успешно сохранено!</string>
     <string name="copy">Пароль скопирован</string>
+    <string name="pass_change">Смена пароля</string>
+    <string name="new_password">Новый пароль</string>
+    <string name="old_Password">Старый пароль</string>
+    <string name="change_passsword">Сменить пароль</string>
 </resources>
