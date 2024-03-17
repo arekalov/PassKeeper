@@ -7,7 +7,7 @@ import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
-import com.arekalov.passkeeper.security.RepositorySecurity
+import com.arekalov.data.security.RepositorySecurity
 import com.arekalov.passkeeper.utils.BiometricAuthListener
 import com.arekalov.passkeeper.utils.PasswordsValidationState
 import com.google.crypto.tink.Aead

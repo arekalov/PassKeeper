@@ -1,4 +1,4 @@
-package com.arekalov.passkeeper.security
+package com.arekalov.data.security
 
 import com.google.crypto.tink.Aead
 import java.security.GeneralSecurityException

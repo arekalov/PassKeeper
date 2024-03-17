@@ -52,7 +52,6 @@ dependencies {
 
 // crypto security
     implementation("androidx.security:security-crypto:1.0.0-alpha02")
-    implementation("com.google.crypto.tink:tink-android:1.2.2")
 
 // fingerprints
     implementation("androidx.biometric:biometric:1.1.0")
