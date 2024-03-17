@@ -22,12 +22,23 @@ class LoginViewModel(
     private val SALT_NAME = "salt"
     val securityRepo = RepositorySecurity(aead)
 
+    fun encodePass(password: String): String {
+        return securityRepo.encodePassword(password)
+    }
+
+    fun decodePass(password: String): String {
+        try {
+            return securityRepo.decodePassword(password)
+        } catch (ex: Exception) {
+            return "Невозможно расшифровать пароль"
+        }
+    }
+
     fun signUp(pass: String) {
         val (encryptedPass, salt) = securityRepo.encodePin(pass)
         encryptedSharedPreferences.edit().putString(PASS_NAME, encryptedPass).apply()
         encryptedSharedPreferences.edit().putString(SALT_NAME, salt).apply()
     }
-    @OptIn(ExperimentalEncodingApi::class)
     fun checkPin(pin: String): Boolean {
         val pass = encryptedSharedPreferences.getString(PASS_NAME, "?") ?: "errorpass"
         val salt = encryptedSharedPreferences.getString(SALT_NAME, "?") ?: "errorsalt"

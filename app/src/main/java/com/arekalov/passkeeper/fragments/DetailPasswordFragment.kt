@@ -1,6 +1,10 @@
-package com.arekalov.passkeeper.adapters
+package com.arekalov.passkeeper.fragments
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,11 +15,13 @@ import com.arekalov.data.db.Password
 import com.arekalov.passkeeper.MainActivity
 import com.arekalov.passkeeper.R
 import com.arekalov.passkeeper.databinding.FragmentDetailPasswordBinding
+import com.arekalov.passkeeper.viewmodels.LoginViewModel
 import com.arekalov.passkeeper.viewmodels.PasswordsViewModel
 
 class DetailPasswordFragment : Fragment() {
     private lateinit var binding: FragmentDetailPasswordBinding
     private lateinit var passwordsViewModel: PasswordsViewModel
+    private lateinit var loginViewModel: LoginViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,8 +34,23 @@ class DetailPasswordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         passwordsViewModel = (activity as MainActivity).passwordViewModel
+        loginViewModel = (activity as MainActivity).loginViewModel
 
         saveBtnOncClick()
+        setPassword()
+    }
+
+    private fun setPassword() {
+        val password = arguments?.getParcelable<Password>("password")
+        if (password != null) {
+            binding.etName.setText(password.name)
+            binding.etLogin.setText(password.login)
+            binding.etPassword.setText(loginViewModel.decodePass(password.password))
+            binding.etUrl.setText(password.url)
+        }
+        else {
+            Log.e("Error", "setProduct null product")
+        }
     }
 
     private fun saveBtnOncClick() {
@@ -40,14 +61,23 @@ class DetailPasswordFragment : Fragment() {
                         name = binding.etName.text.toString(),
                         url = binding.etUrl.text.toString(),
                         login = binding.etLogin.text.toString(),
-                        password = binding.etLogin.text.toString()
+                        password = loginViewModel.encodePass(binding.etPassword.text.toString())
                     )
                 )
                 Toast.makeText(activity, resources.getString(R.string.success), Toast.LENGTH_SHORT)
                     .show()
                 findNavController().popBackStack()
             }
+            Log.e("!", "saveBtnOncClick: ${loginViewModel.encodePass(binding.etPassword.text.toString())}", )
+            Log.e("!", "saveBtnOncClick: ${binding.etPassword.text.toString()}", )
         }
+    }
+
+    fun copyToClipboard(text: String) {
+        val clipboard = context?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clip = ClipData.newPlainText("Password", text)
+        clipboard.setPrimaryClip(clip)
+        Toast.makeText(activity, resources.getString(R.string.copy), Toast.LENGTH_SHORT).show()
     }
 
     private fun checkName(name: String): Boolean {

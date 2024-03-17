@@ -54,7 +54,12 @@
     </fragment>
     <fragment
         android:id="@+id/detailPasswordFragment"
-        android:name="com.arekalov.passkeeper.adapters.DetailPasswordFragment"
+        android:name="com.arekalov.passkeeper.fragments.DetailPasswordFragment"
         android:label="fragment_detail_password"
-        tools:layout="@layout/fragment_detail_password" />
+        tools:layout="@layout/fragment_detail_password" >
+        <argument
+            android:name="password"
+            app:argType="com.arekalov.data.db.Password"
+            app:nullable="true" />
+    </fragment>
 </navigation>

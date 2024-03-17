@@ -1,5 +1,6 @@
 package com.arekalov.data.security
 
+import com.arekalov.data.db.Password
 import com.google.crypto.tink.Aead
 import java.security.GeneralSecurityException
 import java.security.SecureRandom
@@ -19,6 +20,16 @@ class RepositorySecurity(val aead: Aead) {
             )
         )
         return Pair(first = encryptedPin, second = Base64.encode(salt))
+    }
+
+    @OptIn(ExperimentalEncodingApi::class)
+    fun encodePassword(password: String): String {
+        return Base64.encode(aead.encrypt(password.toByteArray(), null))
+    }
+
+    @OptIn(ExperimentalEncodingApi::class)
+    fun decodePassword(encodedPasswordBase64: String): String {
+        return String(aead.decrypt(Base64.decode(encodedPasswordBase64), null))
     }
 
 
