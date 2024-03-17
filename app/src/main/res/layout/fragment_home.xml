@@ -21,6 +21,17 @@
         android:paddingBottom="@dimen/_10sdp"
         android:textColor="@color/primary"/>
 
+    <ImageView
+        android:id="@+id/btn_settings"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:src="@drawable/ic_settings"
+        app:layout_constraintTop_toTopOf="@id/tv_title"
+        app:layout_constraintBottom_toBottomOf="@id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:contentDescription="@string/description"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_passwords"
         android:layout_width="match_parent"

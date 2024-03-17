@@ -51,6 +51,14 @@ class HomeFragment : Fragment() {
 
         passOnClick()
         copyOnCilck()
+        settingsClick()
+    }
+
+    private fun settingsClick() {
+        binding.btnSettings.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToSettingsFragment()
+            findNavController().navigate(action)
+        }
     }
 
 
