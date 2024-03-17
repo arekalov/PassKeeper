@@ -31,4 +31,7 @@
     <string name="new_password">Новый пароль</string>
     <string name="old_Password">Старый пароль</string>
     <string name="change_passsword">Сменить пароль</string>
+    <string name="access_finger">Подтвердить отпечатком пальца</string>
+    <string name="success_password_change">Успешная смена пароля</string>
+    <string name="passwords_same">Пароль должен отличаться от текущего!</string>
 </resources>
