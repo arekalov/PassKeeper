@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "PassKeeper"
 include(":app")
- 
+include(":data")

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_12sdp">
+    <TextView
+        android:layout_marginTop="@dimen/_20sdp"
+        android:id="@+id/tv_logo"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/arkship_font"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="@dimen/_35ssp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_160sdp"
+        app:hintTextColor="@color/primary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/pass"
+            android:inputType="textPassword"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/LogIn"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15ssp"
+        android:backgroundTint="@color/secondary"
+        android:layout_marginTop="@dimen/_7sdp"
+        app:layout_constraintTop_toBottomOf="@id/btn_fingerprint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_fingerprint"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:textStyle="bold"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:text="@string/fingerprint"
+        android:textColor="@color/primaryText"
+        app:layout_constraintTop_toBottomOf="@id/text_input_layout"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_signUp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:textStyle="bold"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:text="@string/register"
+        android:textColor="@color/secondaryText"
+        app:layout_constraintTop_toBottomOf="@id/text_input_layout"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
