@@ -47,8 +47,14 @@ class PasswordsAdapter : RecyclerView.Adapter<PasswordsAdapter.VIewHolder>() {
         holder.binding.tvLogin.text = pass.login
         holder.binding.tvUrl.text = pass.url
 
+        val fullUrl = if (!pass.url.startsWith("http://") && !pass.url.startsWith("https://")) {
+            "http://${pass.url}"
+        } else {
+            pass.url
+        }
+        val apiUrl = "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${fullUrl}&size=50"
         Glide.with(holder.itemView)
-            .load(pass.url + "/favicon.ico")
+            .load(apiUrl)
             .placeholder(R.drawable.img_no_image)
             .into(holder.binding.ivFavicon)
 
