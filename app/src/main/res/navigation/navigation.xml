@@ -44,4 +44,9 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
+    <fragment
+        android:id="@+id/detailPasswordFragment"
+        android:name="com.arekalov.passkeeper.DetailPasswordFragment"
+        android:label="fragment_detail_password"
+        tools:layout="@layout/fragment_detail_password" />
 </navigation>
