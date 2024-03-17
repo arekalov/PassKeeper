@@ -1,4 +1,4 @@
-# PassKeeper
+# PassKeeper <https://github.com/arekalov/PassKeeper>
 ## **Artem Rekalov**
 #### Это тестовое задание для прохождения на стажировку в VK (направление Android-разработчик в команду ленты и рекомендаций)
 
