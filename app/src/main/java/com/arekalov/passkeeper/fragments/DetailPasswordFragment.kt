@@ -86,11 +86,6 @@ class DetailPasswordFragment : Fragment() {
                     .show()
                 findNavController().popBackStack()
             }
-            Log.e(
-                "!",
-                "saveBtnOncClick: ${loginViewModel.encodePass(binding.etPassword.text.toString())}",
-            )
-            Log.e("!", "saveBtnOncClick: ${binding.etPassword.text.toString()}")
         }
     }
 

@@ -27,8 +27,6 @@ class PasswordsAdapter : RecyclerView.Adapter<PasswordsAdapter.VIewHolder>() {
     var differ = AsyncListDiffer(this, diffUtil)
     var onCLickElement: ((Password) -> Unit)? = null
     var onCLickCopy: ((Password) -> Unit)? = null
-    var onCLickDelete: ((Password) -> Unit)? = null
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VIewHolder {
         return VIewHolder(
             PasswordCardBinding.inflate(
@@ -58,11 +56,6 @@ class PasswordsAdapter : RecyclerView.Adapter<PasswordsAdapter.VIewHolder>() {
         holder.binding.ivCopy.setOnClickListener {
             onCLickCopy!!.invoke(differ.currentList[position])
         }
-        try {
-            holder.binding.ivDelete.setOnClickListener {
-                onCLickDelete!!.invoke(differ.currentList[position])
-            }
-        } catch (ex: Exception) {}
 
         holder.binding
         holder.itemView.setOnClickListener {
