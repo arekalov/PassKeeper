@@ -20,4 +20,10 @@
     <string name="description">description</string>
     <string name="example_name">Example name</string>
     <string name="my_passwords">Мои пароли</string>
+    <string name="site_name">Название сайта</string>
+    <string name="login">Login</string>
+    <string name="url">URL</string>
+    <string name="password">Password</string>
+    <string name="save">Сохранить</string>
+    <string name="success">Успешно сохранено!</string>
 </resources>

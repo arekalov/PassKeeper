@@ -2,13 +2,17 @@ package com.arekalov.passkeeper
 
 import android.content.SharedPreferences
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
 import com.arekalov.passkeeper.viewmodels.LoginViewModel
 import com.arekalov.passkeeper.viewmodels.LoginViewModelFactory
+import com.arekalov.passkeeper.viewmodels.PasswordsViewModel
+import com.arekalov.passkeeper.viewmodels.PasswordsViewModelFactory
 import com.google.crypto.tink.Aead
 import com.google.crypto.tink.CleartextKeysetHandle
 import com.google.crypto.tink.JsonKeysetReader
@@ -27,6 +31,9 @@ import kotlin.io.encoding.ExperimentalEncodingApi
 class MainActivity : AppCompatActivity() {
     private lateinit var encryptedSharedPreferences: SharedPreferences
     lateinit var loginViewModel: LoginViewModel
+    val passwordViewModel: PasswordsViewModel by viewModels {
+        PasswordsViewModelFactory((application as PasswordApplication).repository)
+    }
     lateinit var keysetHandle: KeysetHandle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
