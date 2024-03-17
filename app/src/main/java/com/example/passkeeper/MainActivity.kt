@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
     fun stringToKeysetHandle(encodedKeysetHandle: String): KeysetHandle {
         val byteArray = Base64.decode(encodedKeysetHandle)
         val inputStream = ByteArrayInputStream(byteArray)
-        return CleartextKeysetHandle.read(JsonKeyesetReader.withInputStream(inputStream))
+        return CleartextKeysetHandle.read(JsonKeysetReader.withInputStream(inputStream))
     }
 
 
