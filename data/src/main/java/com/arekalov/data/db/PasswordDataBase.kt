@@ -8,19 +8,19 @@ import androidx.room.RoomDatabase
 
 // Annotates class to be a Room Database with a table (entity) of the Word class
 @Database(entities = arrayOf(Password::class), version = 1, exportSchema = false)
-public abstract class PasswordDatabase : RoomDatabase() {
+public abstract class PasswordDataBase : RoomDatabase() {
 
-    abstract fun wordDao(): PasswordDao
+    abstract fun passwordDao(): PasswordDao
 
     companion object {
         @Volatile
-        private var INSTANCE: PasswordDatabase? = null
+        private var INSTANCE: PasswordDataBase? = null
 
-        fun getDatabase(context: Context): PasswordDatabase {
+        fun getDatabase(context: Context): PasswordDataBase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    PasswordDatabase::class.java,
+                    PasswordDataBase::class.java,
                     "password_database"
                 ).build()
                 INSTANCE = instance

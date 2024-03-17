@@ -10,10 +10,10 @@ import androidx.room.Query
 @Dao
 interface PasswordDao {
     @Query("SELECT * FROM password_table")
-    fun getAlphabetizedWords(): LiveData<List<Password>>
+    fun getPasswords(): LiveData<List<Password>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(password: Password)
+    suspend fun updateOrInsert(password: Password)
 
     @Delete
     suspend fun delete(password: Password)
