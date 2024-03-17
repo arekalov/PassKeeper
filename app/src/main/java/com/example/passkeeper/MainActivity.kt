@@ -17,6 +17,7 @@ import com.google.crypto.tink.KeysetHandle
 import com.google.crypto.tink.aead.AeadConfig
 import com.google.crypto.tink.aead.AeadFactory
 import com.google.crypto.tink.aead.AeadKeyTemplates
+
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 import kotlin.io.encoding.Base64
@@ -88,7 +89,7 @@ class MainActivity : AppCompatActivity() {
     fun stringToKeysetHandle(encodedKeysetHandle: String): KeysetHandle {
         val byteArray = Base64.decode(encodedKeysetHandle)
         val inputStream = ByteArrayInputStream(byteArray)
-        return CleartextKeysetHandle.read(JsonKeysetReader.withInputStream(inputStream))
+        return CleartextKeysetHandle.read(JsonKeyesetReader.withInputStream(inputStream))
     }
 
 
