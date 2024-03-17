@@ -1,11 +1,11 @@
-package com.example.passkeeper.fragments
+package com.arekalov.passkeeper.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.passkeeper.R
+import com.arekalov.passkeeper.R
 
 
 class HomeFragment : Fragment() {

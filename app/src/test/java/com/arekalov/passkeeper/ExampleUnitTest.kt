@@ -1,4 +1,4 @@
-package com.example.passkeeper
+package com.arekalov.passkeeper
 
 import org.junit.Test
 

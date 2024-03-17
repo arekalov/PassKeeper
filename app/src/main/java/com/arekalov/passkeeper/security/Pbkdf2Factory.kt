@@ -1,4 +1,4 @@
-package com.example.data.security
+package com.arekalov.passkeeper.security
 
 import javax.crypto.SecretKey
 import javax.crypto.SecretKeyFactory

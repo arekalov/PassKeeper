@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.passkeeper"
+    namespace = "com.arekalov.passkeeper"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.passkeeper"
+        applicationId = "com.arekalov.passkeeper"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -50,9 +50,17 @@ dependencies {
     implementation("com.intuit.sdp:sdp-android:1.1.0")
     implementation("com.intuit.ssp:ssp-android:1.1.0")
 
+// crypto security
     implementation("androidx.security:security-crypto:1.0.0-alpha02")
+    implementation("com.google.crypto.tink:tink-android:1.2.2")
 
+// fingerprints
     implementation("androidx.biometric:biometric:1.1.0")
+
+//    room
+//    implementation("androidx.room:room-ktx:2.6.1")
+//    implementation("androidx.room:room-runtime:2.6.1")
+//    annotationProcessor("androidx.room:room-compiler:2.6.1")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

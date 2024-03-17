@@ -1,4 +1,4 @@
-package com.example.passkeeper.utils
+package com.arekalov.passkeeper.utils
 
 import androidx.biometric.BiometricPrompt
 

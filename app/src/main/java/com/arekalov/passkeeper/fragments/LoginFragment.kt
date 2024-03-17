@@ -1,4 +1,4 @@
-package com.example.passkeeper.fragments
+package com.arekalov.passkeeper.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,11 +8,11 @@ import android.widget.Toast
 import androidx.biometric.BiometricPrompt
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.passkeeper.utils.BiometricAuthListener
-import com.example.passkeeper.MainActivity
-import com.example.passkeeper.R
-import com.example.passkeeper.databinding.FragmentLoginBinding
-import com.example.passkeeper.viewmodels.LoginViewModel
+import com.arekalov.passkeeper.utils.BiometricAuthListener
+import com.arekalov.passkeeper.MainActivity
+import com.arekalov.passkeeper.R
+import com.arekalov.passkeeper.databinding.FragmentLoginBinding
+import com.arekalov.passkeeper.viewmodels.LoginViewModel
 
 class LoginFragment : Fragment(), BiometricAuthListener {
     private lateinit var binding: FragmentLoginBinding

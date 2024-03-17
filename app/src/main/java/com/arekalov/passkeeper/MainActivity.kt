@@ -1,4 +1,4 @@
-package com.example.passkeeper
+package com.arekalov.passkeeper
 
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
-import com.example.passkeeper.viewmodels.LoginViewModel
-import com.example.passkeeper.viewmodels.LoginViewModelFactory
+import com.arekalov.passkeeper.viewmodels.LoginViewModel
+import com.arekalov.passkeeper.viewmodels.LoginViewModelFactory
 import com.google.crypto.tink.Aead
 import com.google.crypto.tink.CleartextKeysetHandle
 import com.google.crypto.tink.JsonKeysetReader

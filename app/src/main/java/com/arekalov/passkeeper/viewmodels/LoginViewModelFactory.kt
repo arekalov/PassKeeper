@@ -1,4 +1,4 @@
-package com.example.passkeeper.viewmodels
+package com.arekalov.passkeeper.viewmodels
 
 import android.content.SharedPreferences
 import androidx.lifecycle.ViewModel

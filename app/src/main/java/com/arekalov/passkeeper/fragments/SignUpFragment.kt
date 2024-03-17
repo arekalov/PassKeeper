@@ -1,4 +1,4 @@
-package com.example.passkeeper.fragments
+package com.arekalov.passkeeper.fragments
 
 import android.os.Bundle
 import android.text.Editable
@@ -9,11 +9,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.passkeeper.MainActivity
-import com.example.passkeeper.utils.PasswordsValidationState
-import com.example.passkeeper.R
-import com.example.passkeeper.databinding.FragmentSignUpBinding
-import com.example.passkeeper.viewmodels.LoginViewModel
+import com.arekalov.passkeeper.MainActivity
+import com.arekalov.passkeeper.utils.PasswordsValidationState
+import com.arekalov.passkeeper.R
+import com.arekalov.passkeeper.databinding.FragmentSignUpBinding
+import com.arekalov.passkeeper.viewmodels.LoginViewModel
 
 
 class SignUpFragment : Fragment() {

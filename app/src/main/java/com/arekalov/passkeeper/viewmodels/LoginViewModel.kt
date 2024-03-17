@@ -1,4 +1,4 @@
-package com.example.passkeeper.viewmodels
+package com.arekalov.passkeeper.viewmodels
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -7,9 +7,9 @@ import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
-import com.example.data.security.RepositorySecurity
-import com.example.passkeeper.utils.BiometricAuthListener
-import com.example.passkeeper.utils.PasswordsValidationState
+import com.arekalov.passkeeper.security.RepositorySecurity
+import com.arekalov.passkeeper.utils.BiometricAuthListener
+import com.arekalov.passkeeper.utils.PasswordsValidationState
 import com.google.crypto.tink.Aead
 import kotlin.io.encoding.ExperimentalEncodingApi
 
