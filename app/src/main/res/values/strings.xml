@@ -17,4 +17,14 @@
     <string name="try_again">Попробуйте еще раз!</string>
     <string name="success_signUp">Вы успешно зарегистрированы!</string>
     <string name="fingerprint_title">Войти по отпечатку</string>
+    <string name="description">description</string>
+    <string name="example_name">Example name</string>
+    <string name="my_passwords">Мои пароли</string>
+    <string name="site_name">Название сайта</string>
+    <string name="login">Login</string>
+    <string name="url">URL</string>
+    <string name="password">Password</string>
+    <string name="save">Сохранить</string>
+    <string name="success">Успешно сохранено!</string>
+    <string name="copy">Пароль скопирован</string>
 </resources>

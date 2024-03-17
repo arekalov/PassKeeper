@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.passkeeper"
+    namespace = "com.arekalov.passkeeper"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.passkeeper"
+        applicationId = "com.arekalov.passkeeper"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -28,11 +28,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 
     buildFeatures {
@@ -41,6 +41,7 @@ android {
 }
 
 dependencies {
+
 //    navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
@@ -49,18 +50,25 @@ dependencies {
     implementation("com.intuit.sdp:sdp-android:1.1.0")
     implementation("com.intuit.ssp:ssp-android:1.1.0")
 
+// crypto security
     implementation("androidx.security:security-crypto:1.0.0-alpha02")
 
+// fingerprints
     implementation("androidx.biometric:biometric:1.1.0")
+
+//        glide
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(project(":data"))
     implementation(libs.androidx.annotation)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(project(":data"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

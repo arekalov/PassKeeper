@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment2"
-        android:name="com.example.passkeeper.fragments.LoginFragment"
+        android:name="com.arekalov.passkeeper.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -27,12 +27,20 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.passkeeper.fragments.HomeFragment"
+        android:name="com.arekalov.passkeeper.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailPasswordFragment"
+            app:destination="@id/detailPasswordFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.passkeeper.fragments.SignUpFragment"
+        android:name="com.arekalov.passkeeper.fragments.SignUpFragment"
         android:label="fragment_sign_up"
         app:popUpToInclusive="true"
         tools:layout="@layout/fragment_sign_up" >
@@ -43,5 +51,15 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailPasswordFragment"
+        android:name="com.arekalov.passkeeper.fragments.DetailPasswordFragment"
+        android:label="fragment_detail_password"
+        tools:layout="@layout/fragment_detail_password" >
+        <argument
+            android:name="password"
+            app:argType="com.arekalov.data.db.Password"
+            app:nullable="true" />
     </fragment>
 </navigation>

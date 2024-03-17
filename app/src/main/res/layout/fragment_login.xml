@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/_12sdp">
@@ -61,7 +62,7 @@
         android:textStyle="bold"
         style="@style/Widget.Material3.Button.TextButton"
         android:text="@string/fingerprint"
-        android:textColor="@color/secondaryText"
+        android:textColor="@color/primaryText"
         app:layout_constraintTop_toBottomOf="@id/text_input_layout"
         app:layout_constraintEnd_toEndOf="parent"/>
 
