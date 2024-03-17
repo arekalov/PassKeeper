@@ -51,6 +51,13 @@ class HomeFragment : Fragment() {
 
         passOnClick()
         copyOnCilck()
+        deleteOnClick()
+    }
+
+    private fun deleteOnClick() {
+        passwordsAdapter.onCLickDelete = {
+            passwordsViewModel.deletePassword(it)
+        }
     }
 
     private fun passOnClick() {

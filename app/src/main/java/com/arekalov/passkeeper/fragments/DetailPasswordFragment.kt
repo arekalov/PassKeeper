@@ -22,6 +22,7 @@ class DetailPasswordFragment : Fragment() {
     private lateinit var binding: FragmentDetailPasswordBinding
     private lateinit var passwordsViewModel: PasswordsViewModel
     private lateinit var loginViewModel: LoginViewModel
+    private var passNow: Password? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,17 +39,34 @@ class DetailPasswordFragment : Fragment() {
 
         saveBtnOncClick()
         setPassword()
+        copyBtnOnClick()
+        deleteBtnOnClick()
+    }
+
+    private fun deleteBtnOnClick() {
+        binding.btnDelete.setOnClickListener {
+            findNavController().popBackStack()
+            if (passNow != null) {
+                passwordsViewModel.deletePassword(passNow!!)
+            }
+        }
+    }
+
+    private fun copyBtnOnClick() {
+        binding.btnCopy.setOnClickListener {
+            copyToClipboard(binding.etPassword.text.toString())
+        }
     }
 
     private fun setPassword() {
         val password = arguments?.getParcelable<Password>("password")
+        passNow = password
         if (password != null) {
             binding.etName.setText(password.name)
             binding.etLogin.setText(password.login)
             binding.etPassword.setText(loginViewModel.decodePass(password.password))
             binding.etUrl.setText(password.url)
-        }
-        else {
+        } else {
             Log.e("Error", "setProduct null product")
         }
     }
@@ -68,8 +86,11 @@ class DetailPasswordFragment : Fragment() {
                     .show()
                 findNavController().popBackStack()
             }
-            Log.e("!", "saveBtnOncClick: ${loginViewModel.encodePass(binding.etPassword.text.toString())}", )
-            Log.e("!", "saveBtnOncClick: ${binding.etPassword.text.toString()}", )
+            Log.e(
+                "!",
+                "saveBtnOncClick: ${loginViewModel.encodePass(binding.etPassword.text.toString())}",
+            )
+            Log.e("!", "saveBtnOncClick: ${binding.etPassword.text.toString()}")
         }
     }
 
