@@ -1,9 +1,14 @@
 package com.arekalov.data.db
 
 import android.content.Context
+import android.util.Log
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
+import kotlin.math.log
 
 
 // Annotates class to be a Room Database with a table (entity) of the Word class
@@ -22,7 +27,8 @@ public abstract class PasswordDataBase : RoomDatabase() {
                     context.applicationContext,
                     PasswordDataBase::class.java,
                     "password_database"
-                ).build()
+                )
+                    .build()
                 INSTANCE = instance
                 instance
             }

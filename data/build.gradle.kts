@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
 }
 
 android {
@@ -36,7 +37,7 @@ dependencies {
 //    room
     implementation("androidx.room:room-ktx:2.6.1")
     api("androidx.room:room-runtime:2.6.1")
-    annotationProcessor("androidx.room:room-compiler:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
 
 //    tink
     implementation("com.google.crypto.tink:tink-android:1.2.2")

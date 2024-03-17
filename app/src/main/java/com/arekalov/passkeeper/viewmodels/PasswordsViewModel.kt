@@ -4,19 +4,20 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.arekalov.data.db.Password
 import com.arekalov.data.db.PasswordDataBase
+import com.arekalov.data.db.PasswordRepository
 import kotlinx.coroutines.launch
 
-class PasswordsViewModel(private val passwordDataBase: PasswordDataBase) : ViewModel() {
-    private val passwordsLiveData = passwordDataBase.passwordDao().getPasswords()
-    fun insertMeal(pass: Password) {
+class PasswordsViewModel(private val repository: PasswordRepository) : ViewModel() {
+    val passwordsLiveData = repository.allPasswords
+    fun insertPassword(pass: Password) {
         viewModelScope.launch {
-            passwordDataBase.passwordDao().updateOrInsert(pass)
+            repository.insert(pass)
         }
     }
 
-    fun deleteMeal(pass: Password) {
+    fun deletePassword(pass: Password) {
         viewModelScope.launch {
-            passwordDataBase.passwordDao().delete(pass)
+            repository.delete(pass)
         }
     }
 }

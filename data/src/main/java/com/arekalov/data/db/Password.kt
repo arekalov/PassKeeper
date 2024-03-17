@@ -10,5 +10,5 @@ data class Password(
     @ColumnInfo(name = "url") val url: String,
     @ColumnInfo(name = "login") val login: String,
     @ColumnInfo(name = "password") val password: String,
-    @ColumnInfo(name = "favicon") val favicon: String
+    @ColumnInfo(name = "favicon") val favicon: String = "$url/favicon.ico"
 )

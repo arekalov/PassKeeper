@@ -19,4 +19,5 @@
     <string name="fingerprint_title">Войти по отпечатку</string>
     <string name="description">description</string>
     <string name="example_name">Example name</string>
+    <string name="my_passwords">Мои пароли</string>
 </resources>
